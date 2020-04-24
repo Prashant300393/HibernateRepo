@@ -23,7 +23,7 @@ public class Student {
 	@Column(name = "sid")
 	private Integer stdId;
 	private String stdName;
-	@Transient
+//	@Transient
 	private String stdFee;
 
 	@ElementCollection

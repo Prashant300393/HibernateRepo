@@ -19,17 +19,18 @@ public class Test {
 			Transaction tx = ses.beginTransaction();
 			
 			
-			List<Double> marks = List.of(80.0, 55.0, 46.0);
-			Map<String, String>grades=  Map.of("P1", "nit", "P2", "htc");
-			Set<String> prjs = Set.of("Proj1", "Proj2");
+			List<Double> marks = List.of(70.0, 65.0, 46.0);
+			Map<String, String>grades=  Map.of("P3", "fit", "P4", "ttl");
+			Set<String> prjs = Set.of("Proj4", "Proj3");
 			
 			Student s = new  Student();
 			s.setGrades(grades);
 			s.setMarks(marks);
 			s.setPrjs(prjs);
-			s.setStdId(1);
+			s.setStdId(2);
 			s.setStdName("a");
-
+			s.setStdFee("5.6");
+			
 			ses.save(s); // Data will be stored in Session Cache first after committing it will Store the Data
 			tx.commit(); // Data Will not be stored until we Commit
 			ses.close();
