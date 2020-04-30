@@ -12,6 +12,9 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Past;
 
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
+
 import lombok.Data;
 
 @Data
@@ -60,7 +63,21 @@ public class Person {
 		private Date dob;
 	*/	
 	
-	@Future(message = "Date must be in Future")
-	private Date dateOfExp;
+	/*	@Future(message = "Date must be in Future")
+		private Date dateOfExp;
+	*/
+	
+	
+	/**
+	 * @NotEmpty  = @NotNull + @Size(min=1)  [Whitespace accepted]
+	 * @NotBlank  = @NotNull + White spaces ignored [Whitespace not accepted]
+	 */
+	
+//	@NotEmpty(message = "Must not be empty, min 1 char needed")
+	@NotBlank(message = "Must not be empty and Whitespaces are not accepted")
+	private String pname;
+	
+	
+	
 	
 }

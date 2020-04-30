@@ -33,12 +33,14 @@ public class Test {
 				per.setDob(date);
 */				
 				
-//				Date date = new Date( 600, 11, 30);
+/*//			Date date = new Date( 600, 11, 30);
 				Date date = new Date(System.currentTimeMillis() + TimeUnit.DAYS.toMillis(365));
 				System.out.println(date.toLocaleString());
 				per.setDateOfExp(date);
-				ses.save(per);
+*/				
 				
+//				per.setPname("   ");
+				ses.save(per);
 				tx.commit();
 			} catch (Exception e) {
 				tx.rollback();
